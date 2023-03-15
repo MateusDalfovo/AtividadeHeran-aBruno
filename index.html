@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<script>
+
+    class ProdutoComum {
+        constructor(nome, preço){
+            this.nome = nome;
+            this.preço = preço;
+        }
+        perguntaComum() {
+                console.log("\nComum, usado ou importado: Comum");
+                
+            }
+    }
+
+    class ProdutoImportado extends ProdutoComum {
+        constructor(nome, preço, taxa){
+            super(nome, preço)
+            this.taxa = taxa
+        }
+
+        perguntaImportado() {
+                console.log("\nComum, usado ou importado: Importado");
+                
+            }
+    }
+
+    class ProdutoUsado extends ProdutoComum {
+        constructor(nome, preço, data){
+            super (nome, preço)
+            this.data = data
+        }  
+        perguntaUsado() {
+                console.log("\nComum, usado ou importado: Usado");
+                
+            }
+    }
+
+    let Notebook = new ProdutoComum ("Notebook", 4000);
+    let Tablet = new ProdutoImportado ("Tablet", 1200, 40);
+    let Iphone = new ProdutoUsado ("Iphone12", 2000, "14/04/2021")
+
+    Notebook.perguntaComum();
+        console.log("Nome: " + Notebook.nome);
+        console.log("Preço: " + Notebook.preço);
+        
+    Tablet.perguntaImportado();
+        console.log("Nome: " + Tablet.nome);
+        console.log("Preço: " + Tablet.preço);
+        console.log("Taxa: " + Tablet.taxa);
+
+    Iphone.perguntaUsado();
+        console.log("Nome: " + Iphone.nome);
+        console.log("Preço: " + Iphone.preço);
+        console.log("Data de Fabricação (dd/mm/aaaa): " + Iphone.data);
+
+      
+console.log("\nPreços:");
+console.log("Tablet: R$1240.00 (Taxa aduaneira: R$40.00)");
+console.log("Notebook: R$4000.00");
+console.log("Iphone 12(usado): R$2000.00 (data de fabricação 14/04/2021)");
+
+</script>
+
+</body>
+</html>

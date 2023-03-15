@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+    class Animal {
+        constructor(nome, comprimento, numPatas, cor, ambiente, velocidade){
+            this.nome = nome;
+            this.comprimento = comprimento;
+            this.numPatas = numPatas;
+            this.cor = cor;
+            this.ambiente = ambiente;
+            this.velocidade = velocidade;
+        }
+
+        AlterarNome(nome){}
+        AlterarComprimento(comprimento){}
+        AlterarPatas(numPatas){}
+        AlterarCor(cor){}
+        AlterarAmbiente(ambiente){}
+        AlterarVelocidade(velocidade){}
+        
+        Dados(){
+            console.log("\nAnimal: " + camelo.nome);
+            console.log("Comprimento: " + camelo.comprimento);
+            console.log("Patas: " + camelo.numPatas);
+            console.log("Cor: " + camelo.cor);
+            console.log("Ambiente: " + camelo.ambiente);
+            console.log("Velocidade: " + camelo.velocidade);
+        }//imprime os dados do animal
+
+    }
+
+    class Peixe extends Animal {
+        constructor(nome, comprimento, numPatas, cor, ambiente, velocidade, caracteristica){
+                super(nome, comprimento, numPatas, cor, ambiente, velocidade)
+                this.caracteristica = caracteristica;
+        }
+        AlterarCaracteristica(caracteristica){};
+        Caracteristica(){};//retorna a característica de um determinado peixe
+
+        DadosPeixe(){
+            console.log("\nAnimal: " + tubarao.nome);
+            console.log("Comprimento: " + tubarao.comprimento);
+            console.log("Patas: " + tubarao.numPatas);
+            console.log("Cor: " + tubarao.cor);
+            console.log("Ambiente: " + tubarao.ambiente);
+            console.log("Velocidade: " + tubarao.velocidade);
+            console.log("Caracteristica: " + tubarao.caracteristica);
+        };//imprime os dados do animal
+    }
+
+
+    class Mamifero extends Animal {
+        constructor(nome, comprimento, numPatas, cor, ambiente, velocidade, alimento){
+                super(nome, comprimento, numPatas,cor,ambiente, velocidade)
+                this.alimento = alimento;
+        }
+        AlterarAlimento(alimento){};
+        Alimento() {}//retorna o alimento de um determinado uso
+        DadosMamifero() {
+            console.log("\nAnimal: " + urso.nome);
+            console.log("Comprimento: " + urso.comprimento);
+            console.log("Patas: " + urso.numPatas);
+            console.log("Cor: " + urso.cor);
+            console.log("Ambiente: " + urso.ambiente);
+            console.log("Velocidade: " + urso.velocidade);
+            console.log("Alimento: " + urso.alimento);
+        }// imprime todos os dados de um mamifero
+    }
+
+    let camelo = new Animal ("Camelo", 159 +' cm', 4, "Caramelo", "Terra", 2 + "m/s")
+    let tubarao = new Peixe ("Tubarão", 300 +' cm', 0, 'Cinzento', 'Mar',1.5 + 'm/s', "Barbatanas")
+    let urso = new Mamifero ("Urso-do-Canadá", 180+' cm', 4, "Marrom", "Terra", 0.5 +'m/s', "Mel")
+
+    console.log("Zoo");
+
+    camelo.Dados();
+    tubarao.DadosPeixe();
+    urso.DadosMamifero();
+
+
+    </script>
+</body>
+</html>
